@@ -106,9 +106,9 @@
       <input type="checkbox" id="coverzoom">
       <label for="coverzoom">
         <% if has_image %>
-          <img src="/static/<%= filename %>">
+          <img src="static/<%= filename %>">
           <div class="zoom-overlay">
-            <img src="/static/<%= filename %>">
+            <img src="static/<%= filename %>">
           </div>
         <% else %>
           <div class="cover-placeholder">
@@ -125,7 +125,7 @@
       <p class="l2"><span class="highlight<%= tags[:album].nil? ? ' unknown' : '' %>"<% unless tags[:albumsort].nil? %> title="<%= tags[:albumsort] %>"<% end %>><%= tags[:album] || 'Unknown album' %></span><% if !tags[:album_artist].nil? && tags[:album_artist] != tags[:artist] && tags[:album_artist] != 'Various Artists' %> by <span class="highlight"<% unless tags[:albumartistsort].nil? %> title="<%= tags[:albumartistsort] %>"<% end %>><%= tags[:album_artist] %></span><% end %><% unless tags[:track].nil? %>, track <span class="highlight"><%= tags[:track] %></span>/<span class="highlight"><%= tags[:totaltracks] %></span><% end %></p>
       <p class="audio">
         <audio controls>
-          <source src="/static/<%= filename %>.ogg" type="audio/ogg">
+          <source src="static/<%= filename %>.ogg" type="audio/ogg">
           Your browser does not support the audio element.
         </audio>
       </p>

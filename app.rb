@@ -31,7 +31,6 @@ get '/:filename' do
     stream = metadata['streams'].select { |e| e['codec_type'] == 'audio' }.first
     tags = Hash[stream['tags'].map { |k, v| [k.downcase.to_sym, v] }]
     tags[:duration] = metadata['format']['duration'].to_f
-    pp tags
     colors = has_image ? main_colours_palette(image_path) : ['#ffffffff', '#000000ff', '#777777ff']
     if tags[:track]&.include? '/'
       tags[:track], tags[:totaltracks] = tags[:track].split('/')
