@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: https://ogp.me/ns/music#">
 <head>
-  <title>verdure</title>
+  <title><%= tags[:artist] || 'Unknown artist' %> – <%= tags[:title] %>  [verdure]</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="<%= tags[:artist] || 'Unknown artist' %> – <%= tags[:title] %>" />
+  <meta property="og:type" content="music.song" />
+  <meta property="og:url" content="https://mz.sb/verdure/<%= filename %>" />
+  <meta property="og:image" content="https://mz.sb/verdure/static/<%= filename %>" />
+  <meta property="og:audio" content="https://mz.sb/verdure/static/<%= filename %>.ogg" />
+  <meta property="og:audio:secure_url" content="https://mz.sb/verdure/static/<%= filename %>.ogg" />
+  <meta property="og:audio:type" content="audio/ogg" />
+  <meta property="music:duration" content="<%= tags[:duration].to_i %>" />
+  <% unless tags[:artist].nil? %><meta property="music:musician" content="<%= tags[:artist] %>" /><% end %>
+  <% unless tags[:album].nil? %>
+    <meta property="music:album" content="<%= tags[:album] %>" />
+    <% unless tags[:track].nil? %><meta property="music:album:track" content="<%= tags[:track] %>" /><% end %>
+  <% end %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
