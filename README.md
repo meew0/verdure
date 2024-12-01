@@ -1,6 +1,6 @@
 # verdure
 
-A tiny web server that serves music files while displaying their metadata in a pretty way.
+A tiny web server that serves music files while displaying their metadata in a pretty way. Does not have a huge amount of functionality on its own. It is more intended as a component in a larger setup. I personally use this in combination with some bots and scripts, to let me allow my friends to listen to music files stored on my server, in an aesthetically pleasing way.
 
 Three example screenshots:
 
