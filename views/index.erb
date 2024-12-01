@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta property="og:title" content="<%= tags[:artist] || 'Unknown artist' %> – <%= tags[:title] %>" />
   <meta property="og:type" content="music.song" />
-  <meta property="og:url" content="https://mz.sb/verdure/<%= filename %>" />
-  <meta property="og:image" content="https://mz.sb/verdure/static/<%= filename %>" />
-  <meta property="og:audio" content="https://mz.sb/verdure/static/<%= filename %>.ogg" />
-  <meta property="og:audio:secure_url" content="https://mz.sb/verdure/static/<%= filename %>.ogg" />
+  <meta property="og:url" content="<%= OGP_BASE_PATH %>/<%= filename %>" />
+  <meta property="og:image" content="<%= OGP_BASE_PATH %>/static/<%= filename %>" />
+  <meta property="og:audio" content="<%= OGP_BASE_PATH %>/static/<%= filename %>.ogg" />
+  <meta property="og:audio:secure_url" content="<%= OGP_BASE_PATH %>/static/<%= filename %>.ogg" />
   <meta property="og:audio:type" content="audio/ogg" />
   <meta property="music:duration" content="<%= tags[:duration].to_i %>" />
   <% unless tags[:artist].nil? %><meta property="music:musician" content="<%= tags[:artist] %>" /><% end %>

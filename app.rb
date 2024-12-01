@@ -3,6 +3,8 @@ require 'sinatra/reloader' if development?
 require 'json'
 require 'open3'
 
+require_relative 'config.rb'
+
 # Ensure the public directory is used for static files
 set :public_folder, 'public'
 
